@@ -64,7 +64,7 @@ flowchart TD
 |------------|-----------|
 | Interface | Streamlit |
 | LLM | Ollama(local) |
-| Base de Conhecimento | JSON/CSV mockados (estão na pasta 'data') |
+| Base de Conhecimento | JSON/CSV mockados (estão na pasta 'data'), Kaggle, HuggingFace|
 | Validação | Checagem de alucinações |
 
 ---
