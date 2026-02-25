@@ -63,7 +63,7 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | Streamlit |
-| LLM | Ollama(local) |
+| LLM | Ollama(local), Gemini(teste alfa) |
 | Base de Conhecimento | JSON/CSV mockados (estão na pasta 'data'), Kaggle, HuggingFace|
 | Validação | Checagem de alucinações |
 
