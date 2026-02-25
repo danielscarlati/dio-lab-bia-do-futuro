@@ -26,7 +26,7 @@ O produto Fundo Imobiliario (FII) substituiu o Fundo Multimercado, pois preciso 
 ## Estratégia de Integração
 
 ### Como os dados são carregados?
-Programação em Python com a biblioteca Pandas ou injetar os dados no prompt.
+Programação em Python ou injetar os dados no prompt.
 
 
 ### Como os dados são usados no prompt?
