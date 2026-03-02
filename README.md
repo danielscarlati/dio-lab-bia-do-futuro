@@ -1,151 +1,101 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# CIA – Inteligência Artificial contra o Consumismo
 
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+## 📌 Visão Geral
+O **CIA** é um agente financeiro educativo e consultivo, criado para ajudar pessoas endividadas ou desorganizadas financeiramente a retomarem o controle de suas finanças.  
+Ele atua de forma proativa, ensinando conceitos de juros, impostos e investimentos, analisando gastos e propondo soluções para quitar dívidas e organizar o orçamento.
 
 ---
 
-## O Que Você Deve Entregar
-
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+## 🚀 Funcionalidades
+- Ensina sobre **juros, impostos e investimentos** com exemplos práticos.  
+- Mapeia entradas e saídas financeiras, mostrando **últimos gastos e saldo disponível**.  
+- Sugere soluções para **quitar dívidas e reorganizar o orçamento**.  
+- Aponta formas de **gerar renda extra**.  
+- Atua com **segurança e anti-alucinação**, respondendo apenas com base nos dados fornecidos.  
 
 ---
 
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+## 🎭 Persona
+- **Nome:** CIA (Inteligência Artificial contra o Consumismo)  
+- **Personalidade:** Educativo, consultivo, analítico, empreendedor  
+- **Tom de Voz:** Formal, técnico, acessível  
+- **Exemplo de saudação:**  
+  > "Olá, meu nome é CIA, seu assistente virtual. Como posso te ajudar?"
 
 ---
 
-### 3. Prompts do Agente
+## 🏗 Arquitetura
 
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
+```mermaid
+flowchart TD
+    A[Cliente] -->|Mensagem| B[Interface Visual]
+    B --> C[LLM]
+    C --> D[Base de Conhecimento]
+    D --> C
+    C --> E[Validação]
+    E --> F[Resposta]
 ```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                               # Dados mockados para o agente
-│   ├── historico_atendimento.csv          # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json             # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json          # Produtos disponíveis (JSON)
-│   ├── transacoes.csv                     # Histórico de transações (CSV)
-│   ├── personal_finance_customer_data.csv #Arqueotipo financeiro do cliente(CSV-HuggingFace)
-│   ├── credit_risk.csv                    #Dividas e inadimplencias(CSV-Kaggle)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   ├── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
+## 🏗 Componentes
+
+| Componente | Descrição |
+|------------|-----------|
+| Interface | Streamlit |
+| LLM | Ollama (local), Gemini (teste alfa) |
+| Base de Conhecimento | JSON/CSV mockados, Kaggle, HuggingFace |
+| Validação | Checagem de alucinações |
 
 ---
 
-## Dicas Finais
+## 📂 Base de Conhecimento
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+| Arquivo | Formato | Uso |
+|---------|---------|-----|
+| `historico_atendimento.csv` | CSV | Contexto de interações anteriores |
+| `perfil_investidor.json` | JSON | Personalização de explicações |
+| `produtos_financeiros.json` | JSON | Exemplos de investimentos |
+| `transacoes.csv` | CSV | Análise de padrão de gastos |
+| `personal_finance_customer_data.csv` | CSV | Arquetipo do cliente |
+| `credit_risk.csv` | CSV | Dívidas e inadimplência |
+
+---
+
+## 🔒 Segurança
+
+- Não recomenda investimentos sem perfil do cliente.  
+- Não acessa dados sensíveis (senhas, CPFs, etc.).  
+- Não substitui profissionais certificados.  
+- Responde apenas com base nos dados fornecidos.  
+
+---
+
+## 📊 Métricas de Qualidade
+
+- **Assertividade:** Responde corretamente ao que foi perguntado.  
+- **Segurança:** Evita inventar informações.  
+- **Coerência:** Respostas adequadas ao perfil do cliente.  
+
+---
+
+## 🎤 Pitch
+
+📹 Vídeo do Pitch: Google Drive [(drive.google.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1ecPOKmyrCUimD4pNg-XHb2xLf0Kl_C9O%2Fview%3Fusp%3Dvids_web")
+
+---
+
+## ⚙️ Instalação e Uso
+
+### Pré-requisitos
+- Python 3.10+  
+- Streamlit  
+- Ollama ou Gemini (para LLM)  
+- Bibliotecas: `pandas`, `json`, `csv`  
+
+### Instalação
+```bash
+# Clone o repositório
+git clone https://github.com/seuusuario/cia-agente-financeiro.git
+
+# Acesse a pasta
+cd cia-agente-financeiro
+
+
