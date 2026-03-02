@@ -58,7 +58,7 @@ Após os testes, registre suas conclusões:
 
 **O que pode melhorar:**
 - Adicionar calculos.
-- Retirar as chaves da resposta, quando o cliente não irá tratar do contexto. Ex.: <unused3921>
+- Retirar as chaves da resposta, quando o cliente não irá tratar do contexto. 
 - Precisa de contexto quando o cliente pergunta.
 
 ---
